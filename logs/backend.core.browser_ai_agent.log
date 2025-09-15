@@ -1,0 +1,12 @@
+2025-09-15 10:26:18 - backend.core.browser_ai_agent - INFO - Initializing Browser AI Manager
+2025-09-15 10:26:18 - backend.core.browser_ai_agent - WARNING - No AI accounts configured, generating mock accounts for testing
+2025-09-15 10:26:18 - backend.core.browser_ai_agent - ERROR - Failed to initialize Selenium browsers: Message: Unable to locate or obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+2025-09-15 10:26:18 - backend.core.browser_ai_agent - ERROR - Failed to initialize Browser AI Manager: Message: Unable to locate or obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+2025-09-15 10:30:24 - backend.core.browser_ai_agent - INFO - Initializing Browser AI Manager
+2025-09-15 10:30:24 - backend.core.browser_ai_agent - WARNING - No AI accounts configured, generating mock accounts for testing
+2025-09-15 10:30:24 - backend.core.browser_ai_agent - ERROR - Failed to initialize Selenium browsers: Message: Unable to locate or obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+
+2025-09-15 10:30:24 - backend.core.browser_ai_agent - ERROR - Failed to initialize Browser AI Manager: Message: Unable to locate or obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+

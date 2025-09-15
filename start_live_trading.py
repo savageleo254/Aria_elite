@@ -297,6 +297,8 @@ async def main():
             await trading_system.shutdown()
 
 if __name__ == "__main__":
+    # Set UTF-8 encoding for stdout
+    sys.stdout.reconfigure(encoding='utf-8')
     print("🚀 ARIA ELITE LIVE TRADING SYSTEM")
     print("=" * 50)
     print("Institutional-Grade Autonomous Trading Platform")

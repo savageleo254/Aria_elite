@@ -1,0 +1,10 @@
+2025-09-15 10:26:37 - backend.core.data_engine - INFO - Initializing Data Engine
+2025-09-15 10:26:37 - backend.core.data_engine - INFO - Data engine configuration loaded successfully
+2025-09-15 10:26:37 - backend.core.data_engine - WARNING - Database connection test failed: invalid DSN: scheme is expected to be either "postgresql" or "postgres", got 'sqlite'
+2025-09-15 10:26:37 - backend.core.data_engine - INFO - Data Engine initialized successfully
+2025-09-15 10:26:37 - backend.core.data_engine - ERROR - Database fetch failed for EURUSD H1: invalid DSN: scheme is expected to be either "postgresql" or "postgres", got 'sqlite'
+2025-09-15 10:30:33 - backend.core.data_engine - INFO - Initializing Data Engine
+2025-09-15 10:30:33 - backend.core.data_engine - INFO - Data engine configuration loaded successfully
+2025-09-15 10:30:33 - backend.core.data_engine - WARNING - Database connection test failed: invalid DSN: scheme is expected to be either "postgresql" or "postgres", got 'sqlite'
+2025-09-15 10:30:33 - backend.core.data_engine - INFO - Data Engine initialized successfully
+2025-09-15 10:30:33 - backend.core.data_engine - ERROR - Database fetch failed for EURUSD H1: invalid DSN: scheme is expected to be either "postgresql" or "postgres", got 'sqlite'

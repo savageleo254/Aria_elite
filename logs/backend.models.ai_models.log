@@ -1,0 +1,12 @@
+2025-09-15 10:25:53 - backend.models.ai_models - INFO - Initializing AI Model Manager
+2025-09-15 10:26:14 - backend.models.ai_models - INFO - LightGBM model loaded from C:\Users\PC\Aria_elite\backend\models\lightgbm_xauusd.pkl
+2025-09-15 10:26:17 - backend.models.ai_models - INFO - Regime classifier loaded from C:\Users\PC\Aria_elite\backend\models\regime_xauusd.pkl
+2025-09-15 10:26:18 - backend.models.ai_models - ERROR - Error loading models: [ONNXRuntimeError] : 7 : INVALID_PROTOBUF : Load model from C:\Users\PC\Aria_elite\backend\models\gru_xauusd.onnx failed:Protobuf parsing failed.
+2025-09-15 10:26:18 - backend.models.ai_models - INFO - AI Model Manager initialized successfully
+2025-09-15 10:26:37 - backend.models.ai_models - ERROR - Error in model monitoring loop: 'AIModelManager' object has no attribute '_check_model_performance'
+2025-09-15 10:30:17 - backend.models.ai_models - INFO - Initializing AI Model Manager
+2025-09-15 10:30:23 - backend.models.ai_models - INFO - LightGBM model loaded from C:\Users\PC\Aria_elite\backend\models\lightgbm_xauusd.pkl
+2025-09-15 10:30:24 - backend.models.ai_models - INFO - Regime classifier loaded from C:\Users\PC\Aria_elite\backend\models\regime_xauusd.pkl
+2025-09-15 10:30:24 - backend.models.ai_models - ERROR - Error loading models: [ONNXRuntimeError] : 7 : INVALID_PROTOBUF : Load model from C:\Users\PC\Aria_elite\backend\models\gru_xauusd.onnx failed:Protobuf parsing failed.
+2025-09-15 10:30:24 - backend.models.ai_models - INFO - AI Model Manager initialized successfully
+2025-09-15 10:30:33 - backend.models.ai_models - ERROR - Error in model monitoring loop: 'AIModelManager' object has no attribute '_check_model_performance'

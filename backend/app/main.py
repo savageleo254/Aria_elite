@@ -7,6 +7,12 @@ import asyncio
 import logging
 from datetime import datetime
 import os
+import sys
+from pathlib import Path
+
+# Add project root to path
+sys.path.append(str(Path(__file__).resolve().parents[2]))
+
 from dotenv import load_dotenv
 
 from backend.core.browser_ai_agent import BrowserAIManager, browser_ai_manager

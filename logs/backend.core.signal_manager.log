@@ -1,0 +1,6 @@
+2025-09-15 10:26:18 - backend.core.signal_manager - INFO - Initializing Signal Manager
+2025-09-15 10:26:18 - backend.core.signal_manager - INFO - Configuration loaded - Max positions: 3, Poll interval: 300s
+2025-09-15 10:26:18 - backend.core.signal_manager - INFO - Signal Manager initialized successfully
+2025-09-15 10:30:24 - backend.core.signal_manager - INFO - Initializing Signal Manager
+2025-09-15 10:30:24 - backend.core.signal_manager - INFO - Configuration loaded - Max positions: 3, Poll interval: 300s
+2025-09-15 10:30:24 - backend.core.signal_manager - INFO - Signal Manager initialized successfully

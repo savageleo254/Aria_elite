@@ -232,6 +232,8 @@ async def main():
             await workflow_system.shutdown()
 
 if __name__ == "__main__":
+    # Set UTF-8 encoding for stdout
+    sys.stdout.reconfigure(encoding='utf-8')
     print("🧠 ARIA ELITE MULTI-AI WORKFLOW AGENT")
     print("=" * 50)
     print("Autonomous AI Assistant for Trading Operations")

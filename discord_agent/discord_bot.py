@@ -65,10 +65,11 @@ class DiscordAgent:
             self.project_config = self.config.load_project_config()
             
             # Get Discord configuration
-            self.discord_token = os.getenv("DISCORD_BOT_TOKEN")
+            DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+            DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
             self.allowed_user_ids = os.getenv("DISCORD_ALLOWED_USERS", "").split(",")
             
-            if not self.discord_token:
+            if not DISCORD_BOT_TOKEN:
                 raise ValueError("DISCORD_BOT_TOKEN environment variable not set")
             
             # Convert user IDs to integers
@@ -330,7 +331,7 @@ class DiscordAgent:
                             pnl_color = discord.Color.green() if pos.get('pnl', 0) > 0 else discord.Color.red()
                             embed.add_field(
                                 name=f"{pos.get('symbol', 'N/A')} ({pos.get('direction', 'N/A')})",
-                                value=f"Entry: {pos.get('entry_price', 0):.5f}\nP&L: ${pos.get('pnl', 0):.2f}",
+                                value=f"Entry: {pos.get('entry_price', 0.0):.5f}\nP&L: ${pos.get('pnl', 0.0):.2f}",
                                 inline=True
                             )
                         
@@ -539,7 +540,7 @@ class DiscordAgent:
                 raise ValueError("Bot not initialized")
             
             logger.info("Starting Discord bot")
-            await self.bot.start(self.discord_token)
+            await self.bot.start(os.getenv("DISCORD_BOT_TOKEN"))
             
         except Exception as e:
             logger.error(f"Failed to start Discord bot: {str(e)}")

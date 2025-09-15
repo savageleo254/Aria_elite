@@ -1,0 +1,32 @@
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Initializing ARIA-DAN MT5 Bridge
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Account: 103936248, Company: FBS Markets Inc.
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Balance: $20054.51, Equity: $20788.79
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Expert Advisor trading enabled
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Starting live data streams
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Starting execution engine
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - MT5 Bridge initialized - Account: 103936248, Balance: $20054.51
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Initializing ARIA-DAN MT5 Bridge
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Account: 103936248, Company: FBS Markets Inc.
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Balance: $20054.51, Equity: $20788.79
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Expert Advisor trading enabled
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Starting live data streams
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - Starting execution engine
+2025-09-15 10:26:18 - backend.core.mt5_bridge - INFO - MT5 Bridge initialized - Account: 103936248, Balance: $20054.51
+2025-09-15 10:26:37 - backend.core.mt5_bridge - ERROR - Error monitoring positions: 'TradePosition' object has no attribute 'commission'
+2025-09-15 10:26:37 - backend.core.mt5_bridge - ERROR - Error monitoring positions: 'TradePosition' object has no attribute 'commission'
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Initializing ARIA-DAN MT5 Bridge
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Account: 103936248, Company: FBS Markets Inc.
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Balance: $20054.51, Equity: $20799.67
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Expert Advisor trading enabled
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Starting live data streams
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Starting execution engine
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - MT5 Bridge initialized - Account: 103936248, Balance: $20054.51
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Initializing ARIA-DAN MT5 Bridge
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Account: 103936248, Company: FBS Markets Inc.
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Balance: $20054.51, Equity: $20799.67
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Expert Advisor trading enabled
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Starting live data streams
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - Starting execution engine
+2025-09-15 10:30:24 - backend.core.mt5_bridge - INFO - MT5 Bridge initialized - Account: 103936248, Balance: $20054.51
+2025-09-15 10:30:33 - backend.core.mt5_bridge - ERROR - Error monitoring positions: 'TradePosition' object has no attribute 'commission'
+2025-09-15 10:30:33 - backend.core.mt5_bridge - ERROR - Error monitoring positions: 'TradePosition' object has no attribute 'commission'

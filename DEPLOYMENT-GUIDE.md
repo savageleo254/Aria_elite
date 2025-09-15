@@ -29,6 +29,39 @@ This guide covers the complete deployment process for ARIA ELITE trading system 
    - Webhook URL for notifications
    - User ID for authorized access
 
+### 3. AI Provider Account Setup
+
+**CRITICAL: You MUST create dedicated accounts using EMAIL/PASSWORD authentication.** Google Sign-In (OAuth) is NOT supported.
+
+#### Step-by-Step Account Creation:
+1. **ChatGPT Plus**
+   - Visit: https://chat.openai.com
+   - Click "Sign up" → Use email address (NOT "Continue with Google")
+   - Complete payment for ChatGPT Plus subscription ($20/month)
+
+2. **Gemini Advanced**
+   - Visit: https://gemini.google.com
+   - Click "Sign in" → "Create account" → "For myself"
+   - Use NEW email (not your primary Gmail)
+   - Complete Google One subscription ($20/month)
+
+3. **Claude Pro**
+   - Visit: https://claude.ai
+   - Click "Sign up with email"
+   - Use NEW email address
+   - Complete Pro subscription ($20/month)
+
+4. **Grok Premium**
+   - Visit: https://x.ai
+   - Click "Sign up" → Use NEW email
+   - Complete Premium subscription ($16/month)
+
+#### Security Recommendations:
+- Use password manager (Bitwarden/1Password)
+- Generate unique 20+ character passwords
+- Use non-Gmail addresses (ProtonMail, Outlook, etc.)
+- **Disable 2FA** during initial setup (will implement automation later)
+
 ## 🔧 Environment Setup
 
 ### 1. System Preparation

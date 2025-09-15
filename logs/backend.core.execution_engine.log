@@ -1,0 +1,12 @@
+2025-09-15 10:26:18 - backend.core.execution_engine - INFO - Initializing Execution Engine
+2025-09-15 10:26:18 - backend.core.execution_engine - INFO - Execution configuration loaded successfully
+2025-09-15 10:26:18 - backend.core.execution_engine - INFO - MT5 Bridge connected successfully
+2025-09-15 10:26:18 - backend.core.execution_engine - INFO - Account: 103936248, Server: None
+2025-09-15 10:26:18 - backend.core.execution_engine - INFO - Balance: 20054.51, Equity: 20788.79
+2025-09-15 10:26:18 - backend.core.execution_engine - INFO - Execution Engine initialized successfully
+2025-09-15 10:30:24 - backend.core.execution_engine - INFO - Initializing Execution Engine
+2025-09-15 10:30:24 - backend.core.execution_engine - INFO - Execution configuration loaded successfully
+2025-09-15 10:30:24 - backend.core.execution_engine - INFO - MT5 Bridge connected successfully
+2025-09-15 10:30:24 - backend.core.execution_engine - INFO - Account: 103936248, Server: None
+2025-09-15 10:30:24 - backend.core.execution_engine - INFO - Balance: 20054.51, Equity: 20799.67
+2025-09-15 10:30:24 - backend.core.execution_engine - INFO - Execution Engine initialized successfully

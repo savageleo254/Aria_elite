@@ -1,6 +1,9 @@
 {
   "execution": {
     "mt5_connection": {
+      "MT5_SERVER": "FBS-Demo",
+      "MT5_LOGIN": "103936248",
+      "MT5_PASSWORD": ">Lyl2E_/",
       "timeout_ms": 30000,
       "retry_attempts": 3,
       "retry_delay_ms": 1000
