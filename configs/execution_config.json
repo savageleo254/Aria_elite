@@ -1,0 +1,38 @@
+{
+  "execution": {
+    "mt5_connection": {
+      "timeout_ms": 30000,
+      "retry_attempts": 3,
+      "retry_delay_ms": 1000
+    },
+    "order_execution": {
+      "slippage_tolerance_pips": 5,
+      "execution_timeout_ms": 10000,
+      "partial_fill_handling": "cancel_remaining"
+    },
+    "batch_processing": {
+      "max_batch_size": 5,
+      "batch_delay_ms": 100,
+      "parallel_execution": true
+    },
+    "error_handling": {
+      "retry_on_failure": true,
+      "max_retries": 3,
+      "fallback_to_market": true,
+      "emergency_close_all": true
+    }
+  },
+  "monitoring": {
+    "performance_metrics": {
+      "track_execution_time": true,
+      "track_slippage": true,
+      "track_fill_rate": true
+    },
+    "alerts": {
+      "execution_failure": true,
+      "high_slippage": true,
+      "connection_issues": true,
+      "order_rejection": true
+    }
+  }
+}

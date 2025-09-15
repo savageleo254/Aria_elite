@@ -1,0 +1,143 @@
+{
+  "timestamp": "2025-09-15T00:11:54.701206",
+  "total_tests": 8,
+  "passed_tests": 4,
+  "success_rate": 50.0,
+  "test_results": {
+    "Frontend Accessibility": {
+      "success": true,
+      "timestamp": "2025-09-15T00:11:52.613577",
+      "details": {
+        "url": "http://localhost:3000",
+        "status": "accessible"
+      }
+    },
+    "Backend Health": {
+      "success": false,
+      "timestamp": "2025-09-15T00:11:52.613963",
+      "details": {
+        "url": "http://localhost:8000/health",
+        "error": "Backend not accessible"
+      }
+    },
+    "API Endpoints": {
+      "success": false,
+      "timestamp": "2025-09-15T00:11:54.700667",
+      "details": {
+        "tested_endpoints": 4,
+        "accessible_endpoints": 2,
+        "results": {
+          "http://localhost:3000/api/health": true,
+          "http://localhost:3000/api/status": false,
+          "http://localhost:3000/api/trades": false,
+          "http://localhost:3000/api/signals": true
+        }
+      }
+    },
+    "Configuration Files": {
+      "success": true,
+      "timestamp": "2025-09-15T00:11:54.700919",
+      "details": {
+        "total_files": 4,
+        "valid_files": 4,
+        "results": {
+          "configs/project_config.json": "valid",
+          "configs/execution_config.json": "valid",
+          "configs/strategy_config.json": "valid",
+          "prisma/schema.prisma": "exists"
+        }
+      }
+    },
+    "Database Schema": {
+      "success": true,
+      "timestamp": "2025-09-15T00:11:54.700958",
+      "details": {
+        "required_models": [
+          "User",
+          "Trade",
+          "Signal",
+          "Symbol"
+        ],
+        "status": "complete"
+      }
+    },
+    "Environment Variables": {
+      "success": false,
+      "timestamp": "2025-09-15T00:11:54.700987",
+      "details": {
+        "missing_variables": [
+          "SUPERVISOR_API_TOKEN",
+          "GEMINI_API_KEY",
+          "MT5_LOGIN",
+          "MT5_PASSWORD",
+          "MT5_SERVER"
+        ],
+        "status": "incomplete"
+      }
+    },
+    "Critical Components": {
+      "success": true,
+      "timestamp": "2025-09-15T00:11:54.701032",
+      "details": {
+        "checked_components": [
+          "src/app/page.tsx",
+          "src/components/TradingChart.tsx",
+          "src/components/BackendControlPanel.tsx",
+          "src/app/api/trades/route.ts",
+          "src/app/api/status/route.ts",
+          "backend/app/main.py",
+          "backend/core/execution_engine.py",
+          "backend/core/mt5_bridge.py",
+          "backend/core/gemini_workflow_agent.py"
+        ],
+        "status": "complete"
+      }
+    },
+    "Package Dependencies": {
+      "success": true,
+      "timestamp": "2025-09-15T00:11:54.701164",
+      "details": {
+        "total_files": 2,
+        "valid_files": 2,
+        "results": {
+          "package.json": "valid_json",
+          "backend/requirements.txt": "valid_requirements"
+        }
+      }
+    }
+  },
+  "summary": [
+    [
+      "Frontend Accessibility",
+      true
+    ],
+    [
+      "Backend Health",
+      false
+    ],
+    [
+      "API Endpoints",
+      false
+    ],
+    [
+      "Configuration Files",
+      true
+    ],
+    [
+      "Database Schema",
+      true
+    ],
+    [
+      "Environment Variables",
+      false
+    ],
+    [
+      "Critical Components",
+      false
+    ],
+    [
+      "Package Dependencies",
+      true
+    ]
+  ]
+}

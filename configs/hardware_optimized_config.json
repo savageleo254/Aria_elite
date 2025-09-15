@@ -1,0 +1,66 @@
+{
+  "hardware_profile": "thinkpad_t470",
+  "memory_constraints": {
+    "total_ram_gb": 8,
+    "max_system_usage_gb": 6,
+    "reserved_for_os_gb": 2
+  },
+  "storage_constraints": {
+    "total_ssd_gb": 256,
+    "max_aria_usage_gb": 50,
+    "log_retention_days": 7,
+    "data_retention_days": 30
+  },
+  "cpu_optimization": {
+    "processor": "i5_7th_gen",
+    "cores": 4,
+    "max_worker_threads": 6,
+    "enable_hyperthreading": true,
+    "cpu_only_processing": true
+  },
+  "microstructure_optimization": {
+    "tick_buffer_size": 2000,
+    "analysis_window_seconds": 120,
+    "redis_max_memory": "512mb",
+    "cache_ttl_seconds": 300,
+    "batch_processing": true,
+    "memory_efficient_mode": true
+  },
+  "model_optimization": {
+    "use_lightweight_models": true,
+    "model_compression": true,
+    "cpu_threads_per_model": 2,
+    "batch_size": 32,
+    "memory_mapping": false,
+    "quantization": "int8"
+  },
+  "database_optimization": {
+    "sqlite_cache_size": "64mb",
+    "journal_mode": "WAL",
+    "synchronous": "NORMAL",
+    "temp_store": "MEMORY",
+    "mmap_size": "256mb"
+  },
+  "api_optimization": {
+    "max_workers": 4,
+    "connection_pool_size": 10,
+    "request_timeout": 30,
+    "keep_alive_timeout": 5,
+    "max_concurrent_requests": 50
+  },
+  "data_cleanup": {
+    "auto_cleanup_enabled": true,
+    "cleanup_interval_hours": 6,
+    "max_log_size_mb": 100,
+    "compress_old_data": true,
+    "delete_old_ticks_days": 1
+  },
+  "performance_monitoring": {
+    "monitor_memory_usage": true,
+    "monitor_cpu_usage": true,
+    "monitor_disk_usage": true,
+    "alert_memory_threshold": 0.85,
+    "alert_cpu_threshold": 0.9,
+    "alert_disk_threshold": 0.8
+  }
+}

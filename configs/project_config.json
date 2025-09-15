@@ -1,0 +1,109 @@
+{
+  "project": "ARIA-ELITE-Multi-AI",
+  "version": "2.0.0",
+  "description": "AI-powered trading system with multi-AI browser automation (ChatGPT, Grok, Gemini, Claude)",
+  "runtime_brain": "Multi-AI Browser Automation",
+  "environment": {
+    "MT5": {
+      "terminal_required": true,
+      "login": "ENV_MT5_LOGIN",
+      "server": "ENV_MT5_SERVER",
+      "password": "ENV_MT5_PASSWORD",
+      "api_key": null,
+      "paper_trading": false
+    },
+    "local_hosting": true,
+    "ENV_vars": ["SUPERVISOR_API_TOKEN", "MT5_LOGIN", "MT5_PASSWORD", "MT5_SERVER"]
+  },
+  "execution_policy": {
+    "modes": {
+      "multi_ai_active": {
+        "description": "Multi-AI system generates signals with browser automation, leverages multiple AI providers for redundancy",
+        "allowed_actions": [
+          "signal_generation",
+          "multi_ai_analysis",
+          "provider_rotation",
+          "risk_assessment",
+          "trade_optimization"
+        ]
+      },
+      "multi_ai_fallback": {
+        "description": "System operates with limited AI capabilities using fallback mechanisms",
+        "allowed_actions": [
+          "basic_signal_generation",
+          "risk_management",
+          "manual_override"
+        ]
+      }
+    },
+    "max_open_positions": 3,
+    "halt_on_max": true,
+    "resume_on_close": true,
+    "poll_interval": "5m",
+    "batch_execution_size": 5
+  },
+  "ai_providers": {
+    "primary": "chatgpt",
+    "secondary": ["gemini", "claude", "grok", "perplexity"],
+    "rotation_strategy": "round_robin",
+    "max_concurrent_sessions": 5,
+    "session_timeout": 1800,
+    "preferred_providers": ["chatgpt", "gemini"],
+    "fallback_providers": ["claude", "grok", "perplexity"]
+  },
+  "supervisor_api": {
+    "endpoints": ["/status", "/ai/status", "/logs", "/pause", "/resume", "/kill", "/restart_model", "/train", "/ai/accounts"],
+    "auth": "Token (SUPERVISOR_API_TOKEN)",
+    "bind": "127.0.0.1:9100",
+    "kill_switch": {
+      "cpu_overload": "90%",
+      "memory_overload": "85%",
+      "max_drawdown": "configurable",
+      "manual_override": true
+    }
+  },
+  "logging": {
+    "journal": {
+      "content": ["trade_history", "strategy_outcomes", "win_rate", "profit_metrics", "ai_provider_usage", "system_patches"],
+      "compression": "gzip",
+      "journal_filter": "high_impact",
+      "log_rotation": "30d"
+    },
+    "backtest_results": "stored locally in parquet/csv, compressed"
+  },
+  "security": {
+    "encryption": "fernet_local",
+    "no_runtime_glm": true,
+    "env_only_secrets": true,
+    "discord_human_override": true,
+    "kill_switch_always_available": true,
+    "browser_isolation": true
+  },
+  "optimizations": {
+    "hardware": {
+      "max_threads": 4,
+      "gc_enabled": true,
+      "process_priority": "low"
+    },
+    "ai": {
+      "cache_results": true,
+      "pruning_quantization": true,
+      "parallel_ai_requests": true,
+      "provider_load_balancing": true
+    },
+    "strategy": {
+      "dynamic_smc_features": true,
+      "disable_heavy_math": true,
+      "multi_ai_consensus": true
+    }
+  },
+  "notes": {
+    "free_only": true,
+    "local_execution": true,
+    "no_cloud_dependency": true,
+    "live_trading_only": true,
+    "paper_trading_disabled": true,
+    "multi_ai_browser_based": true,
+    "leverages_free_tiers": true
+  }
+}

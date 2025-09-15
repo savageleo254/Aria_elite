@@ -1,0 +1,137 @@
+{
+  "ai_accounts": {
+    "chatgpt": [
+      {
+        "email": "your_chatgpt_email_1@example.com",
+        "password": "your_chatgpt_password_1",
+        "max_daily_usage": 50,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      },
+      {
+        "email": "your_chatgpt_email_2@example.com", 
+        "password": "your_chatgpt_password_2",
+        "max_daily_usage": 75,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      }
+    ],
+    "gemini": [
+      {
+        "email": "your_gemini_email_1@gmail.com",
+        "password": "your_gemini_password_1",
+        "max_daily_usage": 100,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      },
+      {
+        "email": "your_gemini_email_2@gmail.com",
+        "password": "your_gemini_password_2", 
+        "max_daily_usage": 150,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      }
+    ],
+    "claude": [
+      {
+        "email": "your_claude_email_1@example.com",
+        "password": "your_claude_password_1",
+        "max_daily_usage": 75,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      },
+      {
+        "email": "your_claude_email_2@example.com",
+        "password": "your_claude_password_2",
+        "max_daily_usage": 100,
+        "session_id": null,
+        "status": "active", 
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      }
+    ],
+    "grok": [
+      {
+        "email": "your_grok_email_1@example.com",
+        "password": "your_grok_password_1",
+        "max_daily_usage": 60,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      }
+    ],
+    "perplexity": [
+      {
+        "email": "your_perplexity_email_1@example.com",
+        "password": "your_perplexity_password_1",
+        "max_daily_usage": 80,
+        "session_id": null,
+        "status": "active",
+        "last_used": null,
+        "usage_count": 0,
+        "daily_usage": 0,
+        "error_count": 0,
+        "created_at": "2024-01-01T00:00:00Z"
+      }
+    ]
+  },
+  "rotation_strategy": "round_robin",
+  "max_concurrent_sessions": 5,
+  "session_timeout": 1800,
+  "provider_preferences": {
+    "primary": "chatgpt",
+    "secondary": ["gemini", "claude", "grok", "perplexity"],
+    "fallback_order": ["chatgpt", "gemini", "claude", "grok", "perplexity"]
+  },
+  "performance_optimization": {
+    "enable_caching": true,
+    "cache_ttl": 300,
+    "parallel_requests": true,
+    "max_retries": 3,
+    "request_timeout": 60
+  },
+  "cost_optimization": {
+    "prefer_free_tiers": true,
+    "usage_thresholds": {
+      "chatgpt": 0.8,
+      "gemini": 0.9,
+      "claude": 0.85,
+      "grok": 0.95,
+      "perplexity": 0.9
+    },
+    "budget_alerts": true,
+    "daily_budget_limit": 100
+  }
+}

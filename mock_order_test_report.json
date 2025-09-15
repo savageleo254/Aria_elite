@@ -1,0 +1,209 @@
+{
+  "timestamp": "2025-09-15T00:13:11.502755",
+  "total_tests": 5,
+  "passed_tests": 4,
+  "success_rate": 80.0,
+  "test_results": [
+    {
+      "test_name": "Valid Buy Order",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491488",
+      "details": {
+        "validation": "correct",
+        "expected": true,
+        "actual": true
+      }
+    },
+    {
+      "test_name": "Valid Sell Order",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491514",
+      "details": {
+        "validation": "correct",
+        "expected": true,
+        "actual": true
+      }
+    },
+    {
+      "test_name": "Invalid Symbol",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491521",
+      "details": {
+        "validation": "correct",
+        "expected": false,
+        "actual": false
+      }
+    },
+    {
+      "test_name": "Negative Volume",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491524",
+      "details": {
+        "validation": "correct",
+        "expected": false,
+        "actual": false
+      }
+    },
+    {
+      "test_name": "Zero Volume",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491527",
+      "details": {
+        "validation": "correct",
+        "expected": false,
+        "actual": false
+      }
+    },
+    {
+      "test_name": "Wide Stop Loss",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491531",
+      "details": {
+        "validation": "correct",
+        "expected": false,
+        "actual": false
+      }
+    },
+    {
+      "test_name": "Order Execution 1",
+      "success": false,
+      "timestamp": "2025-09-15T00:13:11.491570",
+      "details": {
+        "error": "'execution_price'"
+      }
+    },
+    {
+      "test_name": "Order Execution 2",
+      "success": false,
+      "timestamp": "2025-09-15T00:13:11.491587",
+      "details": {
+        "error": "'execution_price'"
+      }
+    },
+    {
+      "test_name": "Order Execution 3",
+      "success": false,
+      "timestamp": "2025-09-15T00:13:11.491601",
+      "details": {
+        "error": "'execution_price'"
+      }
+    },
+    {
+      "test_name": "Order Execution 4",
+      "success": false,
+      "timestamp": "2025-09-15T00:13:11.491612",
+      "details": {
+        "error": "'execution_price'"
+      }
+    },
+    {
+      "test_name": "Order Execution 5",
+      "success": false,
+      "timestamp": "2025-09-15T00:13:11.491624",
+      "details": {
+        "error": "'execution_price'"
+      }
+    },
+    {
+      "test_name": "High Volume Order",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491635",
+      "details": {
+        "risk_check": "correct",
+        "rejected": true,
+        "expected_rejection": true
+      }
+    },
+    {
+      "test_name": "Normal Volume Order",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491639",
+      "details": {
+        "risk_check": "correct",
+        "rejected": false,
+        "expected_rejection": false
+      }
+    },
+    {
+      "test_name": "Excessive Risk per Trade",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491643",
+      "details": {
+        "risk_check": "correct",
+        "rejected": true,
+        "expected_rejection": true
+      }
+    },
+    {
+      "test_name": "Acceptable Risk Order",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.491646",
+      "details": {
+        "risk_check": "correct",
+        "rejected": false,
+        "expected_rejection": false
+      }
+    },
+    {
+      "test_name": "Concurrent Orders",
+      "success": false,
+      "timestamp": "2025-09-15T00:13:11.502606",
+      "details": {
+        "concurrent_orders": 10,
+        "successful_orders": 9,
+        "success_rate": "90.0%"
+      }
+    },
+    {
+      "test_name": "Open Trades Filter",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.502720",
+      "details": {
+        "total_trades": 20,
+        "open_trades": 13,
+        "closed_trades": 7
+      }
+    },
+    {
+      "test_name": "Symbol Filter",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.502728",
+      "details": {
+        "eur_trades": 7,
+        "total_symbols": 3
+      }
+    },
+    {
+      "test_name": "Profit Sorting",
+      "success": true,
+      "timestamp": "2025-09-15T00:13:11.502736",
+      "details": {
+        "highest_profit": 82.2395572946458,
+        "lowest_profit": -96.4532365971292
+      }
+    }
+  ],
+  "summary": [
+    [
+      "Order Validation Logic",
+      true
+    ],
+    [
+      "Order Execution Simulation",
+      true
+    ],
+    [
+      "Risk Management Simulation",
+      true
+    ],
+    [
+      "Concurrent Orders Simulation",
+      false
+    ],
+    [
+      "Order History Simulation",
+      true
+    ]
+  ],
+  "mock_trades_generated": 0
+}

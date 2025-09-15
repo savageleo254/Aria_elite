@@ -1,0 +1,306 @@
+// ARIA ELITE Trading System Database Schema
+// Comprehensive schema for AI-powered trading system
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User Management
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("user") // user, admin, trader
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  trades    Trade[]
+  signals   Signal[]
+  sessions  UserSession[]
+}
+
+model UserSession {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Trading Data Models
+model Symbol {
+  id          String   @id @default(cuid())
+  name        String   @unique // e.g., "EURUSD"
+  displayName String   // e.g., "EUR/USD"
+  category    String   // e.g., "forex", "crypto", "stocks"
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  trades      Trade[]
+  signals     Signal[]
+  marketData  MarketData[]
+  predictions ModelPrediction[]
+  sentiments  NewsSentiment[]
+}
+
+model Trade {
+  id            String   @id @default(cuid())
+  symbolId      String
+  userId        String?
+  signalId      String?
+  
+  // Trade Details
+  direction     String   // "buy" or "sell"
+  volume        Float
+  entryPrice    Float
+  exitPrice     Float?
+  stopLoss      Float?
+  takeProfit    Float?
+  
+  // Status
+  status        String   @default("pending") // pending, open, closed, cancelled
+  orderType     String   @default("market") // market, limit, stop
+  
+  // Execution
+  executionTime DateTime?
+  closeTime     DateTime?
+  slippage      Float    @default(0)
+  
+  // P&L
+  profitLoss    Float    @default(0)
+  commission    Float    @default(0)
+  
+  // Metadata
+  mt5Ticket     String?  // MetaTrader 5 ticket number
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Relations
+  symbol        Symbol   @relation(fields: [symbolId], references: [id])
+  user          User?    @relation(fields: [userId], references: [id])
+  signal        Signal?  @relation(fields: [signalId], references: [id])
+}
+
+model Signal {
+  id            String   @id @default(cuid())
+  symbolId      String
+  userId        String?
+  
+  // Signal Details
+  direction     String   // "buy" or "sell"
+  entryPrice    Float
+  stopLoss      Float
+  takeProfit    Float
+  confidence    Float    // 0.0 to 1.0
+  
+  // Strategy
+  strategy      String   // "smc", "ai", "news_sentiment"
+  timeframe     String   // "1m", "5m", "15m", "1h", "4h", "1d"
+  
+  // Status
+  status        String   @default("generated") // generated, validated, executed, expired
+  isActive      Boolean  @default(true)
+  
+  // AI Analysis
+  aiConfidence  Float?
+  smcScore      Float?
+  newsSentiment Float?
+  
+  // Metadata
+  parameters    String?  // JSON string of strategy parameters
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  expiresAt     DateTime?
+  
+  // Relations
+  symbol        Symbol   @relation(fields: [symbolId], references: [id])
+  user          User?    @relation(fields: [userId], references: [id])
+  trades        Trade[]
+}
+
+model MarketData {
+  id        String   @id @default(cuid())
+  symbolId  String
+  
+  // OHLCV Data
+  timestamp DateTime
+  open      Float
+  high      Float
+  low       Float
+  close     Float
+  volume    Float?
+  
+  // Technical Indicators
+  sma20     Float?
+  sma50     Float?
+  sma200    Float?
+  rsi14     Float?
+  macd      Float?
+  atr       Float?
+  
+  // SMC Data
+  structure String?  // "higher_high", "lower_low", "break_structure"
+  liquidity Float?   // Liquidity level
+  orderBlock String? // Order block identifier
+  
+  createdAt DateTime @default(now())
+  
+  // Relations
+  symbol    Symbol   @relation(fields: [symbolId], references: [id])
+  
+  @@unique([symbolId, timestamp])
+  @@index([symbolId, timestamp])
+}
+
+// AI Model Management
+model AIModel {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  type        String   // "lstm", "lightgbm", "cnn", "mobilenet"
+  version     String
+  status      String   @default("training") // training, ready, error, deprecated
+  
+  // Model Details
+  accuracy    Float?
+  loss        Float?
+  parameters  String?  // JSON string of model parameters
+  
+  // File Paths
+  modelPath   String?  // Path to saved model file
+  configPath  String?  // Path to model configuration
+  
+  // Training
+  trainedAt   DateTime?
+  lastUsed    DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  predictions ModelPrediction[]
+}
+
+model ModelPrediction {
+  id        String   @id @default(cuid())
+  modelId   String
+  symbolId  String
+  
+  // Prediction Data
+  prediction Float
+  confidence Float
+  inputData  String?  // JSON string of input features
+  
+  // Metadata
+  timestamp  DateTime @default(now())
+  
+  // Relations
+  model      AIModel  @relation(fields: [modelId], references: [id])
+  symbol     Symbol   @relation(fields: [symbolId], references: [id])
+}
+
+// System Configuration
+model SystemConfig {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  type      String   @default("string") // string, number, boolean, json
+  category  String   @default("general")
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Performance Metrics
+model PerformanceMetrics {
+  id            String   @id @default(cuid())
+  date          DateTime
+  
+  // Trading Metrics
+  totalTrades   Int      @default(0)
+  winningTrades Int      @default(0)
+  losingTrades  Int      @default(0)
+  winRate       Float    @default(0)
+  
+  // P&L Metrics
+  totalProfit   Float    @default(0)
+  totalLoss     Float    @default(0)
+  netProfit     Float    @default(0)
+  maxDrawdown   Float    @default(0)
+  
+  // Risk Metrics
+  sharpeRatio   Float?
+  profitFactor  Float?
+  avgWin        Float?
+  avgLoss       Float?
+  
+  // System Metrics
+  cpuUsage      Float?
+  memoryUsage   Float?
+  activeSignals Int      @default(0)
+  activeTrades  Int      @default(0)
+  
+  createdAt     DateTime @default(now())
+}
+
+// News and Sentiment
+model NewsArticle {
+  id          String   @id @default(cuid())
+  title       String
+  content     String?
+  source      String
+  url         String?
+  
+  // Sentiment Analysis
+  sentiment   Float?   // -1.0 to 1.0
+  confidence  Float?
+  impact      String?  // "high", "medium", "low"
+  
+  // Metadata
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  
+  // Relations
+  sentiments  NewsSentiment[]
+}
+
+model NewsSentiment {
+  id        String   @id @default(cuid())
+  articleId String
+  symbolId  String
+  
+  // Sentiment for specific symbol
+  sentiment Float    // -1.0 to 1.0
+  confidence Float
+  impact    String   // "high", "medium", "low"
+  
+  createdAt DateTime @default(now())
+  
+  // Relations
+  article   NewsArticle @relation(fields: [articleId], references: [id])
+  symbol    Symbol       @relation(fields: [symbolId], references: [id])
+}
+
+// System Logs
+model SystemLog {
+  id        String   @id @default(cuid())
+  level     String   // "debug", "info", "warn", "error"
+  category  String   // "trading", "ai", "system", "error"
+  message   String
+  data      String?  // JSON string of additional data
+  
+  createdAt DateTime @default(now())
+  
+  @@index([level, category, createdAt])
+}

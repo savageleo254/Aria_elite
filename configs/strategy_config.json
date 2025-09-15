@@ -1,0 +1,67 @@
+{
+  "strategies": {
+    "smc_strategy": {
+      "enabled": true,
+      "description": "Smart Money Concepts trading strategy",
+      "features": {
+        "break_of_structure": true,
+        "liquidity_zones": true,
+        "fvg": true,
+        "order_blocks": true,
+        "choch": true,
+        "dynamic_feature_toggling": true
+      },
+      "parameters": {
+        "min_confidence": 0.75,
+        "max_risk_per_trade": 0.02,
+        "reward_ratio": 2.0,
+        "volatility_threshold": 0.3
+      }
+    },
+    "ai_strategy": {
+      "enabled": true,
+      "description": "AI-powered trading strategy using ensemble models",
+      "models": ["tinyml_lstm", "lightgbm", "1d_cnn", "mobilenetv3"],
+      "parameters": {
+        "ensemble_threshold": 0.7,
+        "model_weights": {
+          "tinyml_lstm": 0.3,
+          "lightgbm": 0.3,
+          "1d_cnn": 0.2,
+          "mobilenetv3": 0.2
+        }
+      }
+    },
+    "news_sentiment_strategy": {
+      "enabled": true,
+      "description": "News sentiment-based trading strategy",
+      "parameters": {
+        "sentiment_threshold": 0.6,
+        "impact_weight": 0.4,
+        "time_decay_hours": 24
+      }
+    }
+  },
+  "risk_management": {
+    "max_daily_loss": 0.05,
+    "max_drawdown": 0.15,
+    "position_sizing": {
+      "method": "fixed_fractional",
+      "risk_per_trade": 0.02,
+      "max_portfolio_risk": 0.06
+    },
+    "stop_loss": {
+      "type": "atr_based",
+      "atr_multiplier": 2.0,
+      "min_distance_pips": 10
+    },
+    "take_profit": {
+      "type": "risk_reward_ratio",
+      "ratio": 2.0,
+      "partial_profits": [
+        {"percent": 0.5, "close_percent": 0.3},
+        {"percent": 1.0, "close_percent": 0.7}
+      ]
+    }
+  }
+}
